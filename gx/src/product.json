@@ -1,0 +1,26 @@
+[
+    {
+        "category": "მსუბუქი",
+        "name": "BMW",
+        "price": 1,
+        "stock": true
+    },
+    {
+        "category": "მსუბუქი",
+        "name": "TOYOTA",
+        "price": 3,
+        "stock": false
+    },
+    {
+        "category": "სატვირთო",
+        "name": "MAN",
+        "price": 10,
+        "stock": true
+    },
+    {
+        "category": "სატვირთო",
+        "name": "BOBCAT",
+        "price": 8,
+        "stock": false
+    }
+]
