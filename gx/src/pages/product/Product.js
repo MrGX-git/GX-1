@@ -1,22 +1,15 @@
 import { useState } from 'react';
+// import debounce from 'lodash/debounce';
 
-import productData from '../../product.json'
+import { ProductItem } from './productitem';
+import { Button, TextInput, Form } from '../../atoms';
+import { Collabsible } from '../../components/collabsible';
+import productData from '../../product.json';
 
-export const ProductItem =({producti})=> {
-    return (
-        <div>
-            <h3>
-                {producti.name}, ღირებულება - ${producti.price}
-            </h3>
-            <h5>
-                {producti.stock ? 'აქანაა' : 'არაა აქანააა'}, კატეგორია - {producti.category}
-            </h5>
-        </div>
-    );
-};
 
 export const Product =()=> {
     const [inStockOnly, setInStockOnly] = useState(false);
+    const [ filterTerm, setFilterTerm ] = useState('');
     // const renderProduct =()=> {
     //     const rows = [];
     //     let lastCategory = null;
@@ -25,23 +18,55 @@ export const Product =()=> {
     //     })
 
     // }
+
+
     const renderProduct =()=> {
         let data = productData.slice()
         if(inStockOnly) {
-            data = productData.filter((item) => item.stock);
+            data = data.filter((item) => item.stock);
+        }
+        if( filterTerm ) {
+            data = data.filter((el) => el.name.includes(filterTerm));
         }
         return data.map((item, index) => {
             return <ProductItem producti={item} key={index} />;
         });
     };
+
+    const hendleFilterChange = ({ target })=> {
+        setFilterTerm(target.value)
+      }
+
+
     return (
         <div className="row shadow my-3 p-3">
             <h3>Product</h3>
-            <button className="btn btn-outline-success" onClick={()=> setInStockOnly(!inStockOnly)}>
-                რამდენი დარჩა ჯიგარო
-            </button>
-            <hr />
-            {renderProduct()}
+            <Form className='my-2 p-1'>
+                <div className='my-3 row'>
+                    <div className='col-8'>
+                        <h4> filter - {filterTerm}</h4>
+                        <TextInput 
+                          value = {filterTerm} 
+                          onChange = {hendleFilterChange}
+                          placeholder = 'ძიება...'
+                        /> 
+                    </div>
+                    <div className='col-2 p-4'>
+                        <Button 
+                          className="btn btn-outline-success"
+                          type='button' 
+                          onClick={()=> setInStockOnly(!inStockOnly)}
+                        >
+                            {inStockOnly ? 'გამოუშვი რამდენია 🪃' : 'ესარის ჯიგარო სულ 🥇'}
+                        </Button>
+                    </div>
+                </div>
+            </Form>
+            <hr /> 
+            <Collabsible closedTitle='⇣ ⇣ ⇣ მანჩვენე პროდუქცია ⇣ ⇣ ⇣' oependTitle='⇡ ⇡ ⇡ დამალე პროდუქცია ⇡ ⇡ ⇡'>
+                {renderProduct()}
+            </Collabsible>
+            
         </div>
     )
 }

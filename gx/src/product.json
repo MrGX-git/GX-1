@@ -22,5 +22,35 @@
         "name": "BOBCAT",
         "price": 8,
         "stock": false
+    },
+    {
+        "category": "მსუბუქი",
+        "name": "ბეემჟე",
+        "price": 12,
+        "stock": true
+    },
+    {
+        "category": "მსუბუქი",
+        "name": "ბბემჟე",
+        "price": 13,
+        "stock": true
+    },
+    {
+        "category": "მსუბუქი",
+        "name": "ტოყოტა",
+        "price": 31,
+        "stock": false
+    },
+    {
+        "category": "სატვირთო",
+        "name": "mani",
+        "price": 101,
+        "stock": true
+    },
+    {
+        "category": "სატვირთო",
+        "name": "bobika",
+        "price": 18,
+        "stock": false
     }
 ]
