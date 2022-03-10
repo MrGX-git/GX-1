@@ -3,54 +3,76 @@
         "category": "მსუბუქი",
         "name": "BMW",
         "price": 1,
-        "stock": true
+        "stock": true,
+        "id": 1
     },
     {
         "category": "მსუბუქი",
         "name": "TOYOTA",
         "price": 3,
-        "stock": false
+        "stock": false,
+        "id": 2
     },
     {
         "category": "სატვირთო",
         "name": "MAN",
         "price": 10,
-        "stock": true
+        "stock": true,
+        "id": 3
     },
     {
         "category": "სატვირთო",
         "name": "BOBCAT",
         "price": 8,
-        "stock": false
+        "stock": false,
+        "id": 4
     },
     {
         "category": "მსუბუქი",
         "name": "ბეემჟე",
         "price": 12,
-        "stock": true
+        "stock": true,
+        "id": 4
     },
     {
         "category": "მსუბუქი",
         "name": "ბბემჟე",
         "price": 13,
-        "stock": true
+        "stock": true,
+        "id": 5
     },
     {
         "category": "მსუბუქი",
         "name": "ტოყოტა",
         "price": 31,
-        "stock": false
+        "stock": false,
+        "id": 6
     },
     {
         "category": "სატვირთო",
         "name": "mani",
         "price": 101,
-        "stock": true
+        "stock": true,
+        "id": 7
     },
     {
         "category": "სატვირთო",
         "name": "bobika",
         "price": 18,
-        "stock": false
+        "stock": false,
+        "id": 8
+    },{
+        "category": "მსუბუქი",
+        "name": "teSLA",
+        "price": 1.31,
+        "stock": true,
+        "id": 9
+    },
+    {
+        "category": "უნივერსალი",
+        "name": "FoReStEr",
+        "price": 18.36,
+        "stock": false,
+        "id": 10
     }
 ]

@@ -6,15 +6,19 @@ import { Layout } from './components/layout';
 
 import { Product } from './pages/product';
 
+import { CartProvider } from './providers/CartProvider'
+
 import './App.css';
 
 function App() {
   return (
-    <Layout className="App">
-      <Header />
-        <Product />
-      <Footer />
-    </Layout>
+    <CartProvider>
+      <Layout className="App">
+        <Header />
+          <Product />
+        <Footer />
+      </Layout>
+    </CartProvider>
   );
 };
 

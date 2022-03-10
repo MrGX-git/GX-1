@@ -1,7 +1,7 @@
 import { useState } from 'react';
 // import debounce from 'lodash/debounce';
 
-import { ProductItem } from './productitem';
+import { ProductItem } from './ProductItem';
 import { Button, TextInput, Form } from '../../atoms';
 import { Collabsible } from '../../components/collabsible';
 import productData from '../../product.json';
@@ -29,9 +29,9 @@ export const Product =()=> {
             data = data.filter((el) => el.name.includes(filterTerm));
         }
         return data.map((item, index) => {
-            return <ProductItem producti={item} key={index} />;
-        });
-    };
+            return <ProductItem producti={item} key={index} />
+        })
+    }
 
     const hendleFilterChange = ({ target })=> {
         setFilterTerm(target.value)
@@ -63,8 +63,13 @@ export const Product =()=> {
                 </div>
             </Form>
             <hr /> 
-            <Collabsible closedTitle='⇣ ⇣ ⇣ მანჩვენე პროდუქცია ⇣ ⇣ ⇣' oependTitle='⇡ ⇡ ⇡ დამალე პროდუქცია ⇡ ⇡ ⇡'>
+            <Collabsible 
+              closedTitle='⇣ ⇣ ⇣ მანჩვენე პროდუქცია ⇣ ⇣ ⇣' 
+              oependTitle='⇡ ⇡ ⇡ დამალე პროდუქცია ⇡ ⇡ ⇡'
+            >
+              <div className='d-flex flex-wrap justify-content-between'>
                 {renderProduct()}
+              </div>
             </Collabsible>
             
         </div>
