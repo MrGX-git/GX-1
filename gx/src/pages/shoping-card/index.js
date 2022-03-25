@@ -1,0 +1,2 @@
+
+export { ShopingCard } from './ShopingCard'

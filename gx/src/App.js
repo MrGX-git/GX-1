@@ -1,12 +1,10 @@
 
-import { Header } from './components/header';
-import { Footer } from './components/footer';
-import { Layout } from './components/layout';
-
-
-import { Product } from './pages/product';
+import { Header } from './components/header'
+import { Footer } from './components/footer'
+import { Layout } from './components/layout'
 
 import { CartProvider } from './providers/CartProvider'
+import { Routes } from './Routes'
 
 import './App.css';
 
@@ -15,7 +13,7 @@ function App() {
     <CartProvider>
       <Layout className="App">
         <Header />
-          <Product />
+          <Routes />
         <Footer />
       </Layout>
     </CartProvider>

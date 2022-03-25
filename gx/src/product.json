@@ -61,7 +61,8 @@
         "price": 18,
         "stock": false,
         "id": 8
-    },{
+    },
+    {
         "category": "მსუბუქი",
         "name": "teSLA",
         "price": 1.31,

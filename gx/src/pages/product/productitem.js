@@ -1,5 +1,5 @@
-import { useContext, useState } from 'react';
-import { CartContext } from '../../providers/CartProvider';
+import { useState } from 'react';
+import { useCart } from '../../providers/CartProvider';
 import { Alert, Button } from '../../atoms';
 
 import './ProductItem.css'
@@ -9,7 +9,7 @@ export const ProductItem =({producti})=> {
         addNewItem, 
         removeItem, 
         cart: {item: cardItem}
-    } = useContext(CartContext)
+    } = useCart()
 
     const [outOfStock, setOutOfStock] = useState(false)
     
@@ -32,8 +32,9 @@ export const ProductItem =({producti})=> {
                 <div className='d-flex flex-column'>
                     {outOfStock && <Alert message='დამატება შეუძლებელია' />}
                     <h5>
-                        {producti.stock ? 'აქანაა' : 'არაა აქანააა'}, კატეგორია - {producti.category}
+                        {producti.stock ? 'გაყიდვაშია' : 'არ გვაქვს'}
                     </h5>
+                    <h4>კატეგორია - {producti.category}</h4>
                 </div>
                 <h5 className='text-muted'>
                     {inCart ? `კალათაშია: ${cardItem[producti.id].qty} ც` : 'არ არის კალათაში 🚫'}

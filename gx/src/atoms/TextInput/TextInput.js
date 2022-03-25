@@ -1,6 +1,6 @@
 
 
-export const TextInput =({ value, onChange, placeholder='' })=> {
+export const TextInput =({ value, onChange, placeholder })=> {
     const id = Math.random().toString();
     return (
       <div className="input-group mb-3">
