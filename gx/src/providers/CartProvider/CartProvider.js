@@ -1,5 +1,6 @@
-import { useContext } from "react";
-import { createContext, useState } from "react";
+
+import { createContext, useContext } from "react";
+import { useLocalStorage } from '../../hooks/useLocalStorage'
 
 export const CartContext = createContext({
   total: 0,
@@ -8,7 +9,7 @@ export const CartContext = createContext({
 CartContext.displayName = 'CartContext'
 
 export const CartProvider = ({children}) => {
-  const[cart, setCart] = useState({
+  const[cart, setCart] = useLocalStorage("super-app: shoping-cart",{
     total: 0,
     item: {}
   })
