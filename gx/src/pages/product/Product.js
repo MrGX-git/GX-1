@@ -26,7 +26,7 @@ export const Product =()=> {
             el.name.toLowerCase().includes(pausedSearch.toLowerCase()))
             setResult(data)
         } else {
-            setResult([])
+            setResult(productData.slice())
         }
     },[pausedSearch])
     
