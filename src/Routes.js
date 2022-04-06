@@ -5,6 +5,7 @@ import { Routes as Routers, Route } from 'react-router-dom'
 import { Loader } from './atoms'
 import { Layout } from './components/layout'
 import { Home } from './pages/home'
+import Profile from './pages/profile'
 import { Login } from './pages/login'
 import { Registr } from './pages/registr/Registr'
 import { NoPages } from './pages/NoPages'
@@ -29,6 +30,7 @@ export const Routes =()=> {
                 <ShopingCard />
               </Suspense>
             } />
+            <Route path={routes.PROFILE_PATH} element={ <Profile title='page title' />} />
             <Route path={routes.LOGIN_PATH} element={ <Login /> }/>
             <Route path={routes.REGISTR_PATH} element={ <Registr /> }/>
             <Route path={routes.NOPAGES_PATH} element={ <NoPages /> }/>

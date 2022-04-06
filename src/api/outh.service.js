@@ -7,7 +7,7 @@ axios.defaults.baseURL = API_BASE_URL
 
 export const loginAsync = async( data ) => {
     try {
-        const response = await axios.get('/login', data)
+        const response = await axios.post('/login', data)
         return response.data
     } catch (e) {
         console.log('__loginAsync__Error', e)
@@ -16,6 +16,8 @@ export const loginAsync = async( data ) => {
 }
 export const registerAsync = async( data ) => {
     try {
+        const response = await axios.post('/register', data)
+        return response.data
     } catch (e) {
         console.log('__registerAsync__Error', e)
         return null

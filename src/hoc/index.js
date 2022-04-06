@@ -1,0 +1,2 @@
+
+export { withAuthProtection } from './withAuthProtection'

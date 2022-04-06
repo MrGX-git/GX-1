@@ -2,17 +2,16 @@
 import { createContext, useContext } from "react";
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 
-export const CartContext = createContext({
+const initialState = {
   total: 0,
-  item: {}
-})
+  item: []
+}
+
+export const CartContext = createContext( initialState )
 CartContext.displayName = 'CartContext'
 
 export const CartProvider = ({children}) => {
-  const[cart, setCart] = useLocalStorage("super-app: shoping-cart",{
-    total: 0,
-    item: {}
-  })
+  const[cart, setCart] = useLocalStorage("super-app: shoping-cart", initialState)
   const addNewItem =(product)=> {
     console.log(product)
     setCart((prev)=> {
@@ -68,12 +67,16 @@ export const CartProvider = ({children}) => {
       }
     })
   }
+  const resetBucket =()=> {
+    setCart(initialState)
+  }
   return (
     <CartContext.Provider 
       value={{
         cart, 
         addNewItem, 
         removeItem,
+        resetBucket
       }}
     >
       {children}
