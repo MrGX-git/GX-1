@@ -8,6 +8,7 @@ export const Button =({className, text, onClick, type = 'Button', disabled, chil
         onClick={onClick} 
         type={type}
         disabled = {disabled}
+        data-testid = 'buttonElement'
     >
             {buttonContent}
     </button>)
