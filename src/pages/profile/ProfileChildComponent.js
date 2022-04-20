@@ -1,12 +1,11 @@
 
 import { memo } from "react"
 
-const ProfileChildComponent =()=> {
-    console.log('__CHILD_COMPONENT_RENDERING__')
-    const fs = Math.round(Math.random() * 40) + 10
+const ProfileChildComponent =({ param, onClick })=> {
+    console.log('__CHILD_COMPONENT_RENDERING__', param.color)
     return (
         <h3 style={{
-            fontSize: fs,
+            color: param.color
         }}>Child</h3>
     )
 }

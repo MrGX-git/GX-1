@@ -1,7 +1,7 @@
 
 import { memo } from "react"
 
-const ProfileChildComponentSecond =()=> {
+const ProfileChildComponentSecond =({ color })=> {
     console.log('__CHILD_COMPONENT_SECOND_RENDERING__')
     const fs = Math.round(Math.random() * 40) + 10
     return (
