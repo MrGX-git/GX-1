@@ -23,7 +23,13 @@ function reducer( state, action ) {
       ]
     
     case ACTION_TASK_UPDATED:
-      return state
+      return state.map((t) => {
+        if(t.id === action.payload.task.id) {
+          return action.payload.task
+        }else {
+          return t
+        }
+      })
 
       default: 
         throw Error('unknown action: ', action.type)
@@ -38,6 +44,7 @@ const initialState = [
 export const Task =()=> {
     const [ tasks, dispatch ] = useReducer( reducer, initialState )
 
+    // ACTION CREATOR
     const onTaskRemove =(taskId)=> {
         console.log("__TASK_ID__", taskId)
         dispatch({
@@ -47,7 +54,14 @@ export const Task =()=> {
             },
         })
     }
-    const onTaskUpdate =()=> {}
+    const onTaskUpdate = (updatedTask) => {
+      dispatch ({
+        type: ACTION_TASK_UPDATED,
+        payload: {
+          task: updatedTask
+        }
+      })
+    }
 
     const onTaskCreate =(newTask)=> {
       console.log(tasks)
@@ -57,7 +71,7 @@ export const Task =()=> {
         payload: {
           task: {
             ...newTask,
-            id: tasks.lenght
+            id: tasks.length
           },
         },
       })

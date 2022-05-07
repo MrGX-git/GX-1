@@ -8,7 +8,9 @@ export const AddTask =({ onTaskCreate })=> {
   const [text, setText] = useState('')
     return (
         <div className="row add-task">
-            <Form className='form row'>
+            <Form className='form row'onSubmit={(ev) => {
+              ev.preventDefault()
+            }}>
                 <div className="mb-3 col-md-4">
                   <input 
                     className="form-control" 
@@ -18,9 +20,11 @@ export const AddTask =({ onTaskCreate })=> {
                   />
                 </div>
                 <div className="mb-3 col-md-4">
-                  <Button className="btn btn-outline-primary" onClick={()=>{
-                    setText('')
-                    onTaskCreate({
+                  <Button 
+                    className="btn btn-outline-primary" 
+                    onClick={()=>{
+                      setText('')
+                      onTaskCreate({
                       done: false,
                       text
                     })
